@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Editar Docentes</title>
+</head>
+<body>
+<div align="center">
+<div>
+	 <nobr>
+		 <a th:href="@{/}">Volver al Inicio</a>
+	</nobr>
+    <form th:action="@{/docentes/{id}(id=${docente.id})}" th:object="${docente}" method="post">
+    <fieldset>
+        <legend>Datos del Docente</legend>
+         <div>
+        <table "table table-striped" border="1">
+        <h1>Edicion de Docentes</h1>
+            <tr>
+                <td><label>CLAVE:</label></td>
+                <td><input type="text" th:field="*{clave}" /></td>
+            </tr>
+            <tr>
+                <td><label>NOMBRE: </label></td>
+                <td><input type="text" th:field="*{nombre}" /></td>
+            </tr>
+            <tr>
+                <td><label>APELLIDOS: </label></td>
+                <td><input type="text" th:field="*{apellidos}" /></td>
+            </tr>
+            <tr>
+                <td><label>EMAIL: </label></td>
+                <td><input type="text" th:field="*{email}" /></td>
+            </tr>
+            <tr>
+                <td><label>TELEFONO: </label></td>
+                <td><input type="text" th:field="*{telefono}" /></td>
+            </tr>
+            <tr>
+                <td><label>BLOG: </label></td>
+                <td><input type="text" th:field="*{blog}" /></td>
+            </tr>
+            <tr>
+                <td><label>PROFESIONAL: </label></td>
+                <td><input type="text" th:field="*{profesional}" /></td>
+            </tr>
+            <tr>
+                <td><label>ESCALARON: </label></td>
+                <td><input type="text" th:field="*{escalaron}" /></td>
+            </tr>
+            <tr>
+                <td><label>IDIOMA: </label></td>
+                <td><input type="text" th:field="*{idioma}" /></td>
+            </tr>
+            <tr>
+                <td><label>AÑOS DE EXPERIENCIA: </label></td>
+                <td><input type="text" th:field="*{anosExperiencia}" /></td>
+            </tr>
+            <tr>
+                <td><label>AREA DE TRABAJO: </label></td>
+                <td><input type="text" th:field="*{areaTrabajo}" /></td>
+            </tr>   
+        </table>
+        </div>
+        <div>
+        <br>
+          <tr>
+                <td>
+                    <button type="submit">Registrar...</button>
+                </td>
+            </tr>
+            </div>
+    </fieldset>
+</form>
+</div>
+</body>
+</html>

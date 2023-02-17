@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+        <meta charset="UTF-8" />
+
+        <title>Administrar Docentes</title>
+
+	<div align="center">
+    </head>
+<form action="">
+	<fieldset style="width: 35%">
+	<legend style="color: blue"> Datos del Docente: </legend>
+<!-- 	 <a th:href="@{/docentes/nuevo}">Registrar Docente</a> -->
+	<table>
+	<div>
+	 <a th:href="@{/docentes/nuevo}">Registrar Docente</a>
+	    </div>
+    <body>
+
+        <h1>Lista de Docentes</h1>
+
+        <br/><br/>
+
+            <table "table table-striped" border="1">
+
+              </tr>
+                <th>Clave</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Blog</th>
+                <th>Profesional</th>
+                <th>Escalaron</th>
+                <th>Idioma</th>
+                <th>Años de Experiencia</th>
+                <th>Area de Trabajo</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="docente : ${docentes}">
+                    <td th:text="${docente.clave}">Clave</td>
+                    <td th:text="${docente.nombre}">Nombre</td>
+                    <td th:text="${docente.apellidos}">Apellidos</td>
+                    <td th:text="${docente.email}">Email</td>
+                    <td th:text="${docente.telefono}">Telefono</td>
+                    <td th:text="${docente.blog}">Blog</td>
+                    <td th:text="${docente.profesional}">Profesional</td>
+                    <td th:text="${docente.escalaron}">Escalaron</td>
+                    <td th:text="${docente.idioma}">Idioma</td>
+                    <td th:text="${docente.anosExperiencia}">Años de Experiencia</td>
+                    <td th:text="${docente.areaTrabajo}">Area de Trabajo</td>
+                    <td>
+                    	<a th:href="@{/docentes/editar/{id}(id=${docente.id})}" class="btn btn-info">Editar</a>
+                    	<a th:href="@{/docentes/{id}(id=${docente.id})}" class="btn btn-danger">Eliminar</a>
+                     </td>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+
+        <br/><br/>
+
+        <div>
+        </div>
+
+   
+        </div>
+
+    </body>
+
+</html>
